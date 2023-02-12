@@ -1,0 +1,14 @@
+{
+  "name": "malvaidle",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "npx esbuild src/index.ts --bundle --outfile=/dist/out.js",
+    "watch": "npx esbuild src/index.ts --bundle --outfile=/dist/out.js --watch"
+  },
+  "devDependencies": {
+    "esbuild": "^0.17.7",
+    "typescript": "^4.9.5"
+  }
+}
