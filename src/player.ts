@@ -1,4 +1,5 @@
 export interface Player {
+    maxHp: number
     hp: number
     damage: number
     level: number
@@ -7,6 +8,7 @@ export interface Player {
 }
 
 export const player: Player = {
+    maxHp: 10,
     hp: 10,
     damage: 1,
     level: 1,

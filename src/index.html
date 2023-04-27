@@ -5,24 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Malva Idle</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Bot Idle RPG</h1>
     <div id="game">
-        <div id="resources">
-            <p>Jogador:</p>
-            <p id="playerLife"></p>
-            <p id="playerLevel"></p>
-            <p id="playerDamage"></p>
-            <p id="playerCoins"></p>
-            <p id="playerXp"></p>
+        <div id="resources" style="display: flex; flex-direction: row;">
+            <div class="player box">
+
+                <p>Jogador:</p>
+                <div id="life-bar">
+                    <div id="life-bar-progress"><p id="playerLife" style="text-align: center;"></p></div>
+                </div>
+                
+                <p id="playerMaxLife"></p>
+                <p id="playerLevel"></p>
+                <p id="playerDamage"></p>
+                <p id="playerCoins"></p>
+                <p id="playerXp"></p>
+            </div>
+            <div class="box hunt">
+                <p>Hunt:</p>
+                <p id="huntLevel"></p>
+                <p id="goldReward"></p>
+                
+                <div></div>
+            </div>
         </div>
         <div id="game-controls" class="hidden">
             <h2>Controles do jogo</h2>
-            <button id="attackEnemy" disabled>Hunt</button>
-            <button id="attackBoss">Boss Hunt</button>
+            <button id="attackEnemy">Hunt</button>
+            <button id="bossHunt">Boss Hunt</button>
             <button id="buyUpgrade">Comprar Melhoria</button>
         </div>
+
     </div>
     <script src="../dist/out.js"></script>
 </body>
