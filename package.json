@@ -1,11 +1,11 @@
 {
   "name": "malvaidle",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/out.js",
   "license": "MIT",
   "scripts": {
     "build": "npx esbuild src/index.ts --bundle --outfile=/dist/out.js",
-    "watch": "npx esbuild src/index.ts --bundle --outfile=/dist/out.js --watch"
+    "dev": "npx esbuild src/index.ts --bundle --outfile=/dist/out.js --watch"
   },
   "devDependencies": {
     "esbuild": "^0.17.7",
