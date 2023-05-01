@@ -13,6 +13,8 @@ const playerLife = document.getElementById('playerLife')
 const playerMaxLife = document.getElementById('playerMaxLife')
 const playerDamage = document.getElementById('playerDamage')
 const playerXp = document.getElementById('playerXp')
+const playerXpToLevelUp = document.getElementById('playerXpToLevelUp')
+const playerInventory = document.getElementById('playerInventory')
 
 function atualizar() {
     if (playerMaxLife) {
@@ -32,6 +34,16 @@ function atualizar() {
     }
     if (playerXp) {
         playerXp.innerHTML = 'xp: ' + player.xp.toString()
+    }
+    if (playerXpToLevelUp) {
+        playerXpToLevelUp.innerHTML = 'xp para o próximo nível: ' + (player.level * 10).toString()
+    }
+    if (playerInventory) {
+        if (inventory.length == 0) {
+            playerInventory.innerHTML = 'inventário: vazio'
+        }else {
+            playerInventory.innerHTML = 'inventário: ' + inventory.map(item => item.name).join(', ')
+        }
     }
     updateLife()
 }
@@ -79,8 +91,10 @@ function bossHunt(player: Player, enemy: Enemy) {
 }
 
 function buyUpgrade() {
-    
-    addItem(0)
+    console.log('upgrade comprado')
+    addItem(1)
+    console.log(inventory.length.toString())
+    atualizar()
 }
 
 //Ações ao clicar nos botões

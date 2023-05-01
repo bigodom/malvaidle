@@ -49,9 +49,9 @@
   var inventory = [];
   function addItem(id) {
     const itemToAdd = itemList[id];
+    console.log(itemToAdd);
     if (itemToAdd) {
       inventory.push(itemToAdd);
-      console.log("item adicionado ao invent\xE1rio");
     }
   }
 
@@ -75,6 +75,8 @@
   var playerMaxLife = document.getElementById("playerMaxLife");
   var playerDamage = document.getElementById("playerDamage");
   var playerXp = document.getElementById("playerXp");
+  var playerXpToLevelUp = document.getElementById("playerXpToLevelUp");
+  var playerInventory = document.getElementById("playerInventory");
   function atualizar() {
     if (playerMaxLife) {
       playerMaxLife.innerHTML = "vida m\xE1xima: " + player.maxHp.toString();
@@ -93,6 +95,16 @@
     }
     if (playerXp) {
       playerXp.innerHTML = "xp: " + player.xp.toString();
+    }
+    if (playerXpToLevelUp) {
+      playerXpToLevelUp.innerHTML = "xp para o pr\xF3ximo n\xEDvel: " + (player.level * 10).toString();
+    }
+    if (playerInventory) {
+      if (inventory.length == 0) {
+        playerInventory.innerHTML = "invent\xE1rio: vazio";
+      } else {
+        playerInventory.innerHTML = "invent\xE1rio: " + inventory.map((item) => item.name).join(", ");
+      }
     }
     updateLife();
   }
@@ -130,7 +142,10 @@
     console.log(player2.hp);
   }
   function buyUpgrade() {
-    addItem(0);
+    console.log("upgrade comprado");
+    addItem(1);
+    console.log(inventory.length.toString());
+    atualizar();
   }
   huntButton == null ? void 0 : huntButton.addEventListener("click", () => {
     huntBattle(player, enemy);
