@@ -8,8 +8,8 @@ export interface Player {
 }
 
 export const player: Player = {
-    maxHp: 10,
-    hp: 10,
+    maxHp: 5,
+    hp: 5,
     damage: 1,
     level: 1,
     coins: 0,

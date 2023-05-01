@@ -18,6 +18,8 @@
     padding: 10px;
     max-width: min-content;
 }
-.player{
-    
+#playerLife{
+    position: absolute;
+    margin-top: 0;
+    left: 40px;
 }
