@@ -1,4 +1,5 @@
 import { Enemy, enemy } from "./enemy"
+import { addItem, inventory } from "./inventory"
 import { Player, player } from "./player"
 
 //buttons
@@ -79,16 +80,15 @@ function bossHunt(player: Player, enemy: Enemy) {
 
 function buyUpgrade() {
     
-    console.log("upgrade")
+    addItem(0)
 }
 
 //Ações ao clicar nos botões
 huntButton?.addEventListener('click', () => {
     huntBattle(player, enemy)
-    attackEnemyButton.setAttribute('disabled', 'true')
+    huntButton.setAttribute('disabled', 'true')
     setTimeout(() => {
-        attackEnemyButton.removeAttribute('disabled')
-        console.log('delay')
+        huntButton.removeAttribute('disabled')
     }, 1*1000);
 });
 
